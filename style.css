@@ -36,20 +36,20 @@ body::after {
     width: 90%;
     max-width: 800px;
     background: rgba(10, 15, 10, 0.95);
-    border: 2px solid var(--green);
+    border: 2px solid var(--blue);
     padding: 40px;
     box-shadow: 0 0 40px rgba(0, 255, 65, 0.15);
     z-index: 10;
 }
 
-h1 { font-size: 4em; color: var(--green); text-align: center; margin: 0; letter-spacing: 15px; text-shadow: 0 0 10px var(--green); }
+h1 { font-size: 4em; color: var(--blue); text-align: center; margin: 0; letter-spacing: 15px; text-shadow: 0 0 10px var(--green); }
 .tagline { text-align: center; color: #888; margin-bottom: 30px; font-weight: bold; letter-spacing: 2px; }
 
 /* Animasyonlu Neon Butonlar */
 .cmd-btn {
     background: transparent;
-    border: 1px solid var(--green);
-    color: var(--green);
+    border: 1px solid var(--blue);
+    color: var(--blue);
     padding: 12px 20px;
     font-family: inherit;
     text-transform: uppercase;
@@ -57,14 +57,14 @@ h1 { font-size: 4em; color: var(--green); text-align: center; margin: 0; letter-
     margin: 5px;
 }
 .cmd-btn:hover {
-    background: var(--green);
+    background: var(--blue);
     color: black;
-    box-shadow: 0 0 20px var(--green);
+    box-shadow: 0 0 20px var(--blue);
     transform: translateY(-2px);
 }
 
 /* Durum Yazıları */
-.status-active { color: var(--green); animation: blinkGreen 1.5s infinite; font-weight: bold; }
+.status-active { color: var(--blue); animation: blinkblue 1.5s infinite; font-weight: bold; }
 .status-offline { color: var(--red); animation: blinkRed 0.8s infinite; font-weight: bold; }
 
 @keyframes blinkGreen { 50% { opacity: 0.4; } }
@@ -80,6 +80,7 @@ h1 { font-size: 4em; color: var(--green); text-align: center; margin: 0; letter-
 }
 
 input {
-    background: #000; border: 1px solid #333; color: var(--green);
+    background: #000; border: 1px solid #333; color: var(--blue);
     padding: 12px; width: 100%; box-sizing: border-box; font-family: inherit;
+
 }
