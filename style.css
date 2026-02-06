@@ -1,0 +1,85 @@
+:root {
+    --green: #00ff41;
+    --red: #ff0000;
+    --dark: #050505;
+}
+
+/* Tüm sitede imleç Crosshair olsun */
+* { cursor: crosshair !important; }
+
+body {
+    background-color: var(--dark);
+    color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Hareketli Tarama Çizgileri */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 6px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: scan 15s linear infinite;
+}
+@keyframes scan { from { background-position: 0 0; } to { background-position: 0 100%; } }
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(10, 15, 10, 0.95);
+    border: 2px solid var(--green);
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.15);
+    z-index: 10;
+}
+
+h1 { font-size: 4em; color: var(--green); text-align: center; margin: 0; letter-spacing: 15px; text-shadow: 0 0 10px var(--green); }
+.tagline { text-align: center; color: #888; margin-bottom: 30px; font-weight: bold; letter-spacing: 2px; }
+
+/* Animasyonlu Neon Butonlar */
+.cmd-btn {
+    background: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 12px 20px;
+    font-family: inherit;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin: 5px;
+}
+.cmd-btn:hover {
+    background: var(--green);
+    color: black;
+    box-shadow: 0 0 20px var(--green);
+    transform: translateY(-2px);
+}
+
+/* Durum Yazıları */
+.status-active { color: var(--green); animation: blinkGreen 1.5s infinite; font-weight: bold; }
+.status-offline { color: var(--red); animation: blinkRed 0.8s infinite; font-weight: bold; }
+
+@keyframes blinkGreen { 50% { opacity: 0.4; } }
+@keyframes blinkRed { 50% { opacity: 0.2; text-shadow: 0 0 15px var(--red); } }
+
+.stats-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.stats-table td { padding: 10px; border: 1px solid #222; font-size: 0.9em; }
+.stats-table td:first-child { color: var(--green); font-weight: bold; width: 40%; }
+
+#enter-screen {
+    position: fixed; top:0; left:0; width:100%; height:100%; background:black;
+    z-index:10000; display:flex; flex-direction:column; justify-content:center; align-items:center; transition:0.8s;
+}
+
+input {
+    background: #000; border: 1px solid #333; color: var(--green);
+    padding: 12px; width: 100%; box-sizing: border-box; font-family: inherit;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DSXDWM // DIGITAL WAR MACHINE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div id="enter-screen">
+        <button class="cmd-btn" style="font-size: 2em; padding: 25px 50px;" onclick="initSystem()">SİSTEME BAĞLAN</button>
+        <p style="color: #444; margin-top: 20px;">[ TARGET ACQUIRED - CLICK TO PROCEED ]</p>
+    </div>
+
+    <audio id="headshot-sound">
+        <source src="https://quicksounds.com/uploads/tracks/1589350618_1163481701.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <header>
+            <h1>DSXDWM</h1>
+            <div class="tagline">Deep Strike [X] Digital War Machine</div>
+        </header>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+            <div class="info-section">
+                <h2 style="color: var(--green);">// KİMLİK_BİLGİSİ</h2>
+                <p>Kod adı: DSXDWM. Dijital dünyanın gölgelerinde hareket eden, hassas vuruşlar için tasarlanmış bağımsız bir protokol.</p>
+                <p style="margin-top: 20px;">DURUM: <span id="my-status">YÜKLENİYOR...</span></p>
+            </div>
+            <div class="info-section">
+                <h2 style="color: var(--green);">// TEKNİK_VERİ</h2>
+                <table class="stats-table">
+                    <tr><td>ARSENAL</td><td>AK-47, M4A1, AWP, DEAGLE</td></tr>
+                    <tr><td>LOCATION</td><td>DE_DUST2 / INFERNO</td></tr>
+                    <tr><td>PRECISION</td><td>HEAVY %99.9</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

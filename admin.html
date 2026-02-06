@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>DSXDWM // COMMAND CENTER</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div id="auth-box" class="container">
+        <h2 style="text-align: center;">// YETKİLİ_ERİŞİMİ</h2>
+        <input type="password" id="admin-pass" placeholder="ERİŞİM KODUNU GİRİN..." style="margin-top: 20px; text-align: center;">
+        <button class="cmd-btn" style="width: 100%; margin-top: 20px;" onclick="checkAuth()">SİSTEME GİRİŞ YAP</button>
+    </div>
+
+    <div id="admin-panel" class="container" style="display:none;">
+        <h2 style="border-bottom: 1px solid var(--green); padding-bottom: 10px;">// KOMUTA_MERKEZİ</h2>
+        <p>AKTİF PROTOKOL: <span id="admin-status-view">...</span></p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <button class="cmd-btn" onclick="updateStatus('SİSTEM AKTİF // HEDEF ARANIYOR')">SAVAŞ MODU</button>
+            <button class="cmd-btn" onclick="updateStatus('GÖLGE MODU: İZLENEMEZ')">GİZLİLİK</button>
+            <button class="cmd-btn" onclick="updateStatus('OFFLINE')">OFFLINE (KIRMIZI)</button>
+            <button class="cmd-btn" onclick="updateStatus('KRİTİK OPERASYONDA')">MEŞGUL</button>
+            <button class="cmd-btn" onclick="updateStatus('LONG PUSUDA // SES KES')">PUSUDA</button>
+            <button class="cmd-btn" onclick="updateStatus('MAKİNE SOĞUMADA // AFK')">BAKIM</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <input type="text" id="custom-status" placeholder="ÖZEL MESAJ GÖNDER...">
+            <button class="cmd-btn" style="width: 100%; margin-top: 10px;" onclick="updateStatus(document.getElementById('custom-status').value)">GLOBAL GÜNCELLE</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
